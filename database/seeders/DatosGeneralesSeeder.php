@@ -14,8 +14,8 @@ class DatosGeneralesSeeder extends Seeder
     public function run(): void
     {
         $records=[
-            ['nombre' => 'Oscar', 'domicilio' => 'Calle Suripanta', 'entidad' => 'Coacalco', 'ocupacion' => 'transportista', 'escolaridad' => 'secundaria', 'fechaNacimiento' => '2024-11-04T06:00:00.000Z', 'edad' => 51, 'sexo' => 'masculino', 'lugarNacimiento' => 'Naucalpan', 'estadoCivil' => 'casado'],
-            ['nombre' => 'Carmela', 'domicilio' => 'Calle tragacantos', 'entidad' => 'Coacalco', 'ocupacion' => 'ama de casa', 'escolaridad' => 'preparatoria', 'fechaNacimiento' => '2024-11-04T06:00:00.000Z', 'edad' => 62, 'sexo' => 'femenino', 'lugarNacimiento' => 'Naucalpan', 'estadoCivil' => 'casado'],
+            ['nombre' => 'Oscar', 'domicilio' => 'Calle Suripanta', 'entidad' => 'Coacalco', 'ocupacion' => 'transportista', 'escolaridad' => 'secundaria', 'fechaNacimiento' => '2024-11-04T06:00:00.000Z', 'edad' => 51, 'sexo' => 'masculino', 'lugarNacimiento' => 'Naucalpan', 'estadoCivil' => 'casado', 'numeroTelefono' => '7676767676'],
+            ['nombre' => 'Carmela', 'domicilio' => 'Calle tragacantos', 'entidad' => 'Coacalco', 'ocupacion' => 'ama de casa', 'escolaridad' => 'preparatoria', 'fechaNacimiento' => '2024-11-04T06:00:00.000Z', 'edad' => 62, 'sexo' => 'femenino', 'lugarNacimiento' => 'Naucalpan', 'estadoCivil' => 'casado', 'numeroTelefono' => '9898989898']
            ];
            foreach ($records as $record) {
                 DB::table('datos_generales')->insert($record);

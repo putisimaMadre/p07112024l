@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('patologias', function (Blueprint $table) {
+            //ESTE ES UN CATALOGO POR ESO NO LLEVA RELACION CON DATOS GENERALES
             $table->id();
             $table->string("patologias");
         });

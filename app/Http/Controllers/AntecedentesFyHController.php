@@ -30,6 +30,8 @@ class AntecedentesFyHController extends Controller
     {
         $antecedentesFyH = AntecedentesFyH::create($request->all());
         return $antecedentesFyH;
+        //return $request->all();
+        //return $request->idDatosGenerales;
     }
 
     /**

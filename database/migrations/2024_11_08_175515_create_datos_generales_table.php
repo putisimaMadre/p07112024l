@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("sexo");
             $table->string("lugarNacimiento");
             $table->string("estadoCivil");
+            $table->char("numeroTelefono", 12);
             $table->timestamps();
         });
     }

@@ -16,6 +16,8 @@ class AntecedentesFyH extends Model
         "abuelaP",
         "abueloP",
         "hermanosP",
-        "otros",
+        "otrosP",
+        "idPatologias",
+        "idDatosGenerales"
     ];
 }

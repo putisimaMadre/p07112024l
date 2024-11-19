@@ -31,7 +31,7 @@ class DatosGeneralesController extends Controller
     public function store(Request $request)
     {
         $datosGenerales = DatosGenerales::create($request->all());
-        return $request;
+        return $datosGenerales;
     }
 
     /**
