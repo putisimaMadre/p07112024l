@@ -29,6 +29,5 @@ class PatologiaSeeder extends Seeder
            foreach ($records as $record) {
                 DB::table('patologias')->insert($record);
            }
-        
     }
 }
