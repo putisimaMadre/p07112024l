@@ -12,7 +12,7 @@ class EnfermedadSeeder extends Seeder
      */
     public function run(): void
     {
-        $records=[
+        $enfermedades=[
             ['enfermedades' => 'Varicela'],
             ['enfermedades' => 'Rubéola'],
             ['enfermedades' => 'Sarampión'],
@@ -39,8 +39,8 @@ class EnfermedadSeeder extends Seeder
             ['enfermedades' => 'Transfusión Sanguinea'],
             ['enfermedades' => 'Alergias a:'],
            ];
-           foreach ($records as $record) {
-                DB::table('enfermedads')->insert($record);
+           foreach ($enfermedades as $enfermedad) {
+                DB::table('enfermedads')->insert($enfermedad);
            }
     }
 }

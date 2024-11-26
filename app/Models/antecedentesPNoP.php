@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class antecedentesPyP extends Model
+class antecedentesPNoP extends Model
 {
     protected $fillable = [
-        "si",
-        "no",
-        "fechaAgno",
-        "idEnfermedad",
+        "alcohol",
+        "tabaquismo",
+        "drogas",
+        "otros",
         "idDatosGenerales"
     ];
 }

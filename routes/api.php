@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\AntecedentesPyPController;
 use App\Http\Controllers\AntecedentesFyHController;
+use App\Http\Controllers\AntecedentesPNoPController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DatosGeneralesController;
 use App\Http\Controllers\HijoController;
+use App\Http\Controllers\PadecimientosActualesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +30,5 @@ Route::resource('datosGenerales', DatosGeneralesController::class);
 Route::resource('antecedentesFyH', AntecedentesFyHController::class);
 Route::resource('hijo', HijoController::class);
 Route::resource('antecedentesPyP', AntecedentesPyPController::class);
+Route::resource('antecedentesPnoP', AntecedentesPNoPController::class);
+Route::resource('padecimientosActuales', PadecimientosActualesController::class);
