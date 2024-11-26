@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AnalisisFacialController;
+use App\Http\Controllers\AnalisisFuncionalController;
 use App\Http\Controllers\AntecedentesPyPController;
 use App\Http\Controllers\AntecedentesFyHController;
 use App\Http\Controllers\AntecedentesPNoPController;
@@ -32,3 +34,5 @@ Route::resource('hijo', HijoController::class);
 Route::resource('antecedentesPyP', AntecedentesPyPController::class);
 Route::resource('antecedentesPnoP', AntecedentesPNoPController::class);
 Route::resource('padecimientosActuales', PadecimientosActualesController::class);
+Route::resource('analisisFacial', AnalisisFacialController::class);
+Route::resource('analisisFuncional', AnalisisFuncionalController::class);

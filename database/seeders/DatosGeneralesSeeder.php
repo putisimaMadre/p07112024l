@@ -31,6 +31,55 @@ class DatosGeneralesSeeder extends Seeder
                 DB::table('patologias')->insert($patologia);
            }
 
+        $analisisFuncionalN=[
+            ['id' => 1, 'nombre' => 'Normal'],
+            ['id' => 2, 'nombre' => 'Contraccion'],
+            ['id' => 3, 'nombre' => 'Interp. Anterior'],
+            ['id' => 4, 'nombre' => 'Interp. Lateral'],
+            ['id' => 5, 'nombre' => 'Hipoactivo'],
+            ['id' => 6, 'nombre' => 'Hiperactivo'],
+            ['id' => 7, 'nombre' => 'Bucal'],
+            ['id' => 8, 'nombre' => 'Nasal'],
+            ['id' => 9, 'nombre' => 'Atípica'],
+            ['id' => 10, 'nombre' => 'Mixta'],
+            ['id' => 11, 'nombre' => 'Especial'],
+           ];
+           foreach ($analisisFuncionalN as $aF) {
+                DB::table('analisis_funcional_nombres')->insert($aF);
+           }
+
+           $analisisFacial=[
+            ['nombre' => 'Mesofacial'],
+            ['nombre' => 'Dolico Facial'],
+            ['nombre' => 'Braquifacial'],
+            ['nombre' => 'Recto'],
+            ['nombre' => 'Cóncavo'],
+            ['nombre' => 'Convexo'],
+            ['nombre' => 'Mandibula derecha'],
+            ['nombre' => 'Mandibula Izquierda'],
+            ['nombre' => 'Otras'],
+            ['nombre' => 'Equilibrada'],
+            ['nombre' => 'Larga'],
+            ['nombre' => 'Corta'],
+            ['nombre' => 'Equilibrada'],
+            ['nombre' => 'Larga'],
+            ['nombre' => 'Corta'],
+            ['nombre' => 'Ortognático'],
+            ['nombre' => 'Prognático'],
+            ['nombre' => 'Retrognático'],
+            ['nombre' => 'Ortognático'],
+            ['nombre' => 'Prognático'],
+            ['nombre' => 'Retrognático'],
+            ['nombre' => 'Normal'],
+            ['nombre' => 'Marcado'],
+            ['nombre' => 'Borrado'],
+            ['nombre' => 'Competentes'],
+            ['nombre' => 'Incompetentes'],
+           ];
+           foreach ($analisisFacial as $aF) {
+                DB::table('analisis_facial_nombres')->insert($aF);
+           }
+
            $enfermedades=[
             ['enfermedades' => 'Varicela'],
             ['enfermedades' => 'Rubéola'],
@@ -133,5 +182,26 @@ class DatosGeneralesSeeder extends Seeder
             foreach ($padecimientosActuales as $padecimiento) {
                 DB::table('padecimientos_actuales')->insert($padecimiento);
             }
+
+            $analisisFaciales = [
+                ['patronFacial' => 1, 'perfil' => 5, 'asimetria' => 9, 'alturaFE' => 10, 'anchuraFE' => 15, 'perfilMaxilar' => 18, 'perfilMandibular' => 21, 'surcoLM' => 23, 'labiosEr' => 26, 'idDatosGenerales' => 1],
+                ['patronFacial' => 2, 'perfil' => 4, 'asimetria' => 8, 'alturaFE' => 12, 'anchuraFE' => 14, 'perfilMaxilar' => 17, 'perfilMandibular' => 19, 'surcoLM' => 22, 'labiosEr' => 25, 'idDatosGenerales' => 2],
+                ];
+                foreach ($analisisFaciales as $afPyP) {
+                    DB::table('analisis_facials')->insert($afPyP);
+                }
+                /*
+                Query en sql para obtener los nombres
+                SELECT dentista.analisis_facials.idAnalisisFacial, dentista.analisis_facial_nombres.nombre
+                FROM dentista.analisis_facials
+                INNER JOIN dentista.analisis_facial_nombres ON dentista.analisis_facial_nombres.id = 1;
+                */
+            $analisisFuncional = [
+                ['actividadComisural' => 1, 'actividadLingual' => 3, 'labioSuperior' => 5, 'labioInferior' => 1, 'masetero' => 5, 'mentoniano' => 6, 'respiracion' => 8, 'deglucion' => 9, 'idDatosGenerales' => 1],
+                ['actividadComisural' => 2, 'actividadLingual' => 3, 'labioSuperior' => 5, 'labioInferior' => 6, 'masetero' => 6, 'mentoniano' => 1, 'respiracion' => 10, 'deglucion' => 11,'idDatosGenerales' => 2],
+                ];
+                foreach ($analisisFuncional as $aF) {
+                    DB::table('analisis_funcionals')->insert($aF);
+                }
     }
 }
