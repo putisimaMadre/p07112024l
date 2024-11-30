@@ -33,7 +33,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('cliente', ClienteController::class);
 Route::resource('datosGenerales', DatosGeneralesController::class);
+
+Route::controller(AntecedentesFyHController::class)->group(function(){
 Route::resource('antecedentesFyH', AntecedentesFyHController::class);
+Route::post('antecedentesByIdDatosGenerales', 'showByIdDatosGenerales');
+});
+
 Route::resource('hijo', HijoController::class);
 Route::resource('antecedentesPyP', AntecedentesPyPController::class);
 Route::resource('antecedentesPnoP', AntecedentesPNoPController::class);

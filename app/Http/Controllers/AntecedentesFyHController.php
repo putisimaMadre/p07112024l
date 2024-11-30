@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\AntecedentesFyH;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Ramsey\Uuid\Type\Integer;
 
 class AntecedentesFyHController extends Controller
 {
@@ -12,7 +14,8 @@ class AntecedentesFyHController extends Controller
      */
     public function index()
     {
-        //
+        $antecedentesFyH = DB::table("antecedentes_fy_h_s")->get();
+        return $antecedentesFyH;
     }
 
     /**
@@ -37,9 +40,18 @@ class AntecedentesFyHController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AntecedentesFyH $antecedentesFyH)
+    public function show($id)
     {
-        //
+        $libros = AntecedentesFyH::find($id);
+        return $libros;
+    }
+
+    public function showByIdDatosGenerales(Request $request)
+    {
+        $antecedentesFyH = DB::table('antecedentes_fy_h_s')
+            ->where('idDatosGenerales', '=', $request->get("idDatosGenerales"))
+            ->get();
+        return $antecedentesFyH;
     }
 
     /**
