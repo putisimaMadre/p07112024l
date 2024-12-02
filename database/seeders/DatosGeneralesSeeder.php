@@ -120,8 +120,8 @@ class DatosGeneralesSeeder extends Seeder
            }
 
         $antecedentesFamiliares = [
-            ['madre' => true, 'abuelaM' => false, 'abueloM' => true, 'otrosM' => true, 'padre' => false, 'abuelaP' => true, 'abueloP' => false, 'hermanosP' => true, 'otrosP' => false, 'idPatologias' => 1, 'idDatosGenerales' => 1],
-            ['madre' => false, 'abuelaM' => true, 'abueloM' => true, 'otrosM' => true, 'padre' => false, 'abuelaP' => false, 'abueloP' => true, 'hermanosP' => false, 'otrosP' => false, 'idPatologias' => 2, 'idDatosGenerales' => 2]
+            ['madre' => 1, 'abuelaM' => 3, 'abueloM' => 6, 'otrosM' => 7, 'padre' => 9, 'abuelaP' => 1, 'abueloP' => 2, 'hermanosP' => 12, 'otrosP' => 4, 'idPatologias' => 4, 'idDatosGenerales' => 1],
+            ['madre' => 2, 'abuelaM' => 2, 'abueloM' => 2, 'otrosM' => 2, 'padre' => 3, 'abuelaP' => 6, 'abueloP' => 9, 'hermanosP' => 10, 'otrosP' => 3, 'idPatologias' => 6, 'idDatosGenerales' => 2],
             ];
             foreach ($antecedentesFamiliares as $af) {
                 DB::table('antecedentes_fy_h_s')->insert($af);

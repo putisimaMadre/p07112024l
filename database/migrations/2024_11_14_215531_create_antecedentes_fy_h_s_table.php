@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('antecedentes_fy_h_s', function (Blueprint $table) {
             $table->id();
-            $table->boolean("madre")->nullable();
-            $table->boolean("abuelaM")->nullable();
-            $table->boolean("abueloM")->nullable();
-            $table->boolean("otrosM")->nullable();
-            $table->boolean("padre")->nullable();
-            $table->boolean("abuelaP")->nullable();
-            $table->boolean("abueloP")->nullable();
-            $table->boolean("hermanosP")->nullable();
-            $table->boolean("otrosP")->nullable();
+            $table->integer("madre")->nullable();
+            $table->integer("abuelaM")->nullable();
+            $table->integer("abueloM")->nullable();
+            $table->integer("otrosM")->nullable();
+            $table->integer("padre")->nullable();
+            $table->integer("abuelaP")->nullable();
+            $table->integer("abueloP")->nullable();
+            $table->integer("hermanosP")->nullable();
+            $table->integer("otrosP")->nullable();
             $table->unsignedBigInteger("idPatologias");
             $table->foreign("idPatologias")->references("id")->on("patologias");
             $table->unsignedBigInteger("idDatosGenerales");
