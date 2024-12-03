@@ -37,9 +37,10 @@ class DatosGeneralesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DatosGenerales $datosGenerales)
+    public function show($id)
     {
-        //
+        $datosGenerales = DatosGenerales::find($id);
+        return $datosGenerales;
     }
 
     /**
