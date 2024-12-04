@@ -42,8 +42,8 @@ class AntecedentesFyHController extends Controller
      */
     public function show($id)
     {
-        $libros = AntecedentesFyH::find($id);
-        return $libros;
+        $antecedentesFyH = AntecedentesFyH::find($id);
+        return $antecedentesFyH;
     }
 
     public function showByIdDatosGenerales(Request $request)
@@ -59,7 +59,8 @@ class AntecedentesFyHController extends Controller
      */
     public function edit(AntecedentesFyH $antecedentesFyH)
     {
-        //
+        //return $antecedentesFyH;
+        return $antecedentesFyH;
     }
 
     /**

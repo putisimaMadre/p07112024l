@@ -37,6 +37,7 @@ Route::resource('datosGenerales', DatosGeneralesController::class);
 Route::controller(AntecedentesFyHController::class)->group(function(){
 Route::resource('antecedentesFyH', AntecedentesFyHController::class);
 Route::post('antecedentesByIdDatosGenerales', 'showByIdDatosGenerales');
+
 });
 
 Route::resource('hijo', HijoController::class);
