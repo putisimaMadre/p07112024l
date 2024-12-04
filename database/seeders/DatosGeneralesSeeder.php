@@ -128,8 +128,8 @@ class DatosGeneralesSeeder extends Seeder
             }
 
         $antecedentesFamiliaresPyP = [
-            ['si' => true, 'no' => false, 'fechaAgno' => "1993", 'idEnfermedad' => 1, 'idDatosGenerales' => 1],
-            ['si' => false, 'no' => true, 'fechaAgno' => "2000", 'idEnfermedad' => 2, 'idDatosGenerales' => 2],
+            ['sino' => true, 'fechaAgno' => "1993", 'idEnfermedad' => 1, 'idDatosGenerales' => 1],
+            ['sino' => false, 'fechaAgno' => "2000", 'idEnfermedad' => 2, 'idDatosGenerales' => 2],
             ];
             foreach ($antecedentesFamiliaresPyP as $afPyP) {
                 DB::table('antecedentes_py_p_s')->insert($afPyP);

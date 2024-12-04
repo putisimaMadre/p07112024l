@@ -71,7 +71,9 @@ class AntecedentesFyHController extends Controller
      */
     public function update(Request $request, AntecedentesFyH $antecedentesFyH)
     {
-        //
+        $antecedentesFyH = AntecedentesFyH::find($request->id);
+        $antecedentesFyH->update($request->all());
+        return $antecedentesFyH;
     }
 
     /**

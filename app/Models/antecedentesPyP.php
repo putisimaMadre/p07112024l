@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class antecedentesPyP extends Model
 {
     protected $fillable = [
-        "si",
-        "no",
+        "siNo",
         "fechaAgno",
         "idEnfermedad",
         "idDatosGenerales"

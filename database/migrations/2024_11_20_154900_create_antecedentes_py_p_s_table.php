@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('antecedentes_py_p_s', function (Blueprint $table) {
             $table->id();
-            $table->string("si")->nullable();
-            $table->string("no")->nullable();
+            $table->boolean("siNo")->nullable();
             $table->string("fechaAgno")->nullable();
             $table->unsignedBigInteger("idEnfermedad");
             $table->foreign("idEnfermedad")->references("id")->on("enfermedads");

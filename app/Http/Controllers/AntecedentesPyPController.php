@@ -28,8 +28,9 @@ class AntecedentesPyPController extends Controller
      */
     public function store(Request $request)
     {
-        $antecedentesFyH = antecedentesPyP::create($request->all());
-        return $antecedentesFyH;
+        $antecedentesPyP = antecedentesPyP::create($request->all());
+        return $antecedentesPyP;
+        //return $request;
     }
 
     /**
