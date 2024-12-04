@@ -57,9 +57,12 @@ class AntecedentesFyHController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AntecedentesFyH $antecedentesFyH)
+    public function edit($id)
     {
-        //return $antecedentesFyH;
+        $antecedentesFyH = DB::table('antecedentes_fy_h_s')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        //dd($antecedentesFyH);
         return $antecedentesFyH;
     }
 
