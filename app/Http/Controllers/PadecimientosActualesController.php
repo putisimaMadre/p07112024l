@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PadecimientosActuales;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PadecimientosActualesController extends Controller
 {
@@ -43,9 +44,12 @@ class PadecimientosActualesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PadecimientosActuales $padecimientosActuales)
+    public function edit($id)
     {
-        //
+        $padecimientosA = DB::table('padecimientos_actuales')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        return $padecimientosA;
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\antecedentesPNoP;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AntecedentesPNoPController extends Controller
 {
@@ -43,9 +44,12 @@ class AntecedentesPNoPController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(antecedentesPNoP $antecedentesPNoP)
+    public function edit($id)
     {
-        //
+        $antecedentesPnoP = DB::table('antecedentes_p_no_p_s')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        return $antecedentesPnoP;
     }
 
     /**

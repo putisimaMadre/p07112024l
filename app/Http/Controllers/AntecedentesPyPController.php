@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\antecedentesPyP;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AntecedentesPyPController extends Controller
 {
@@ -44,9 +45,13 @@ class AntecedentesPyPController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(antecedentesPyP $antecedentesPyP)
+    public function edit($id)
     {
-        //
+        $antecedentesPyP = DB::table('antecedentes_py_p_s')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        //dd($antecedentesFyH);
+        return $antecedentesPyP;
     }
 
     /**

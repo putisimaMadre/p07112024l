@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AnalisisFacial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnalisisFacialController extends Controller
 {
@@ -43,9 +44,12 @@ class AnalisisFacialController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AnalisisFacial $analisisFacial)
+    public function edit($id)
     {
-        //
+        $analisisF = DB::table('analisis_facials')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        return $analisisF;
     }
 
     /**
