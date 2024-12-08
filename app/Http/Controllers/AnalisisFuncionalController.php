@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AnalisisFuncional;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AnalisisFuncionalController extends Controller
 {
@@ -43,9 +44,13 @@ class AnalisisFuncionalController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AnalisisFuncional $analisisFuncional)
+    public function edit($id)
     {
-        //
+        $antecedentesF = DB::table('analisis_funcionals')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        //dd($antecedentesFyH);
+        return $antecedentesF   ;
     }
 
     /**
