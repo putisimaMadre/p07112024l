@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AnalisisFuncional extends Model
 {
     protected $fillable = [
+        "id",
         "actividadComisural",
         "actividadLingual",
         "labioSuperior",

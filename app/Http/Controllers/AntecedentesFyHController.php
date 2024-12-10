@@ -69,11 +69,19 @@ class AntecedentesFyHController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AntecedentesFyH $antecedentesFyH)
+    public function update(Request $request)
     {
-        $antecedentesFyH = AntecedentesFyH::find($request->id);
-        $antecedentesFyH->update($request->all());
+        /*$antecedentesFyH = AntecedentesFyH::where('idPatologias', $request->idPatologias)
+        ->where('idDatosGenerales', $request->idDatosGenerales)->get;*/
+        $antecedentesFyH = DB::table('antecedentes_fy_h_s')
+            ->where('idPatologias', $request->idPatologias)
+            ->where('idDatosGenerales', $request->idDatosGenerales)
+            ->update(['idDatosGenerales' => $request->idDatosGenerales]);
+
+        //$antecedentesFyH->update($antecedentesFyH);
+        //$antecedentesFyH::update();
         return $antecedentesFyH;
+        //return $antecedentesFyH;
     }
 
     /**

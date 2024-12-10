@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class EvaluacionClinica extends Model
 {
     protected $fillable = [
+    "id",
     "exploracion",
     "motivo",
     "observaciones",

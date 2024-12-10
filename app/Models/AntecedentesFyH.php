@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AntecedentesFyH extends Model
 {
     protected $fillable = [
+        "id",
         "madre",
         "abuelaM",
         "abueloM",

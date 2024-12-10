@@ -61,7 +61,7 @@ class DatosGeneralesController extends Controller
     {
         $datosGenerales = DatosGenerales::find($request->id);
         $datosGenerales->update($request->all());
-        return $request;
+        return $datosGenerales;
     }
 
     /**

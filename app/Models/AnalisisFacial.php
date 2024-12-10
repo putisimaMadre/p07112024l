@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AnalisisFacial extends Model
 {
     protected $fillable = [
+        "id",
         "patronFacial",
         "perfil",
         "asimetria",
