@@ -46,17 +46,22 @@ class DatosGeneralesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DatosGenerales $datosGenerales)
+    public function edit($id)
     {
-        //
+        $datosGenerales = DB::table('datos_generales')
+            ->where('id', '=', $id)
+            ->get();
+        return $datosGenerales;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DatosGenerales $datosGenerales)
+    public function update(Request $request)
     {
-        //
+        $datosGenerales = DatosGenerales::find($request->id);
+        $datosGenerales->update($request->all());
+        return $request;
     }
 
     /**

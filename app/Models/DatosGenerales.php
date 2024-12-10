@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DatosGenerales extends Model
 {
     protected $fillable = [
+        "id",
         "nombre",
         "domicilio",
         "entidad",

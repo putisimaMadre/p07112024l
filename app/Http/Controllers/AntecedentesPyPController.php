@@ -31,7 +31,7 @@ class AntecedentesPyPController extends Controller
     {
         $antecedentesPyP = antecedentesPyP::create($request->all());
         return $antecedentesPyP;
-        //return $request;
+        return $request;
     }
 
     /**
