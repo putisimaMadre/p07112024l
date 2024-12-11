@@ -55,9 +55,12 @@ class AnalisisFacialController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AnalisisFacial $analisisFacial)
+    public function update(Request $request)
     {
-        //
+        $analisisF = DB::table('analisis_facials')
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+        $analisisF->update($request->all());
+        return $request;
     }
 
     /**

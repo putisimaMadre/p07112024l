@@ -57,9 +57,13 @@ class AntecedentesPyPController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, antecedentesPyP $antecedentesPyP)
+    public function update(Request $request)
     {
-        //
+        $antecedentesPyP = DB::table('antecedentes_py_p_s')
+            ->where('idEnfermedad', $request->idEnfermedad)
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+        $antecedentesPyP->update($request->all());
+        return $request;
     }
 
     /**

@@ -71,17 +71,12 @@ class AntecedentesFyHController extends Controller
      */
     public function update(Request $request)
     {
-        /*$antecedentesFyH = AntecedentesFyH::where('idPatologias', $request->idPatologias)
-        ->where('idDatosGenerales', $request->idDatosGenerales)->get;*/
         $antecedentesFyH = DB::table('antecedentes_fy_h_s')
             ->where('idPatologias', $request->idPatologias)
-            ->where('idDatosGenerales', $request->idDatosGenerales)
-            ->update(['idDatosGenerales' => $request->idDatosGenerales]);
-
-        //$antecedentesFyH->update($antecedentesFyH);
-        //$antecedentesFyH::update();
-        return $antecedentesFyH;
-        //return $antecedentesFyH;
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+            //->update(['idDatosGenerales' => $request->idDatosGenerales]);
+        $antecedentesFyH->update($request->all());
+        return $request;
     }
 
     /**

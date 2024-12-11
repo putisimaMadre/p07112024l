@@ -55,9 +55,12 @@ class PadecimientosActualesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PadecimientosActuales $padecimientosActuales)
+    public function update(Request $request)
     {
-        //
+        $padeciemientosA = DB::table('padecimientos_actuales')
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+        $padeciemientosA->update($request->all());
+        return $request;
     }
 
     /**

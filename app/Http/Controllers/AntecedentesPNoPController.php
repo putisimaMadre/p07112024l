@@ -55,9 +55,12 @@ class AntecedentesPNoPController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, antecedentesPNoP $antecedentesPNoP)
+    public function update(Request $request)
     {
-        //
+        $antecedentesPnoP = DB::table('antecedentes_p_no_p_s')
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+        $antecedentesPnoP->update($request->all());
+        return $request;
     }
 
     /**

@@ -46,19 +46,22 @@ class AnalisisFuncionalController extends Controller
      */
     public function edit($id)
     {
-        $antecedentesF = DB::table('analisis_funcionals')
+        $analisisFuncional = DB::table('analisis_funcionals')
             ->where('idDatosGenerales', '=', $id)
             ->get();
         //dd($antecedentesFyH);
-        return $antecedentesF   ;
+        return $analisisFuncional   ;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AnalisisFuncional $analisisFuncional)
+    public function update(Request $request)
     {
-        //
+        $analisisFuncional = DB::table('analisis_funcionals')
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+        $analisisFuncional->update($request->all());
+        return $request;
     }
 
     /**
