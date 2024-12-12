@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DatosGenerales;
+use Database\Seeders\DatosGeneralesSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +14,9 @@ class DatosGeneralesController extends Controller
      */
     public function index()
     {
-        $datosGenerales = DB::table('datos_generales')->get();
+        $datosGenerales = DB::table('datos_generales')
+        ->where('status', 1)
+        ->get();
         return $datosGenerales;
     }
 
@@ -67,8 +70,12 @@ class DatosGeneralesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DatosGenerales $datosGenerales)
+    public function destroy($id)
     {
-        //
+        $datosGenerales = DatosGenerales::where('id', $id)
+            ->orderBy('nombre')
+            ->first();
+            $datosGenerales->update(['status'=>0]);
+        return $datosGenerales;
     }
 }

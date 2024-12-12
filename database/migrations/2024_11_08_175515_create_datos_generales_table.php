@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string("sexo");
             $table->string("lugarNacimiento");
             $table->string("estadoCivil");
+            $table->boolean("siNo")->nullable();
+            $table->boolean("status")->nullable();
             $table->char("numeroTelefono", 12);
             $table->timestamps();
         });
