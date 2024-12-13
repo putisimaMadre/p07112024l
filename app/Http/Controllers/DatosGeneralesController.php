@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\DatosGenerales;
-use Database\Seeders\DatosGeneralesSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

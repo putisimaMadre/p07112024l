@@ -19,12 +19,13 @@ return new class extends Migration
             $table->string("ocupacion");
             $table->string("escolaridad");
             $table->string("fechaNacimiento");
-            $table->string("edad");
+            $table->integer("edad");
             $table->string("sexo");
             $table->string("lugarNacimiento");
             $table->string("estadoCivil");
-            $table->boolean("siNo")->nullable();
+            $table->boolean("alergico")->nullable();
             $table->boolean("status")->nullable();
+            $table->string("observaciones")->nullable();
             $table->char("numeroTelefono", 12);
             $table->timestamps();
         });

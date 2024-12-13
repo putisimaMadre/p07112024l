@@ -19,8 +19,9 @@ class DatosGenerales extends Model
         "sexo",
         "lugarNacimiento",
         "estadoCivil",
-        "siNo",
+        "alergico",
         "status",
+        "observaciones",
         "numeroTelefono",
     ];
 }
