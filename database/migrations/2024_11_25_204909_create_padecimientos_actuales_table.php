@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('padecimientos_actuales', function (Blueprint $table) {
             $table->id();
-            $table->string("preguntaUno")->nullable();
+            $table->boolean("preguntaUno")->nullable();
             $table->string("preguntaUnoS")->nullable();
             $table->boolean("preguntaDos")->nullable();
             $table->string("preguntaDosS")->nullable();

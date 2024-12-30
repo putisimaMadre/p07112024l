@@ -44,17 +44,23 @@ class EvaluacionClinicaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(EvaluacionClinica $evaluacionClinica)
+    public function edit($id)
     {
-        //
+        $evaluacionClinica = DB::table('evaluacion_clinicas')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        return $evaluacionClinica;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, EvaluacionClinica $evaluacionClinica)
+    public function update(Request $request)
     {
-        //
+        $evaluacionClinica = DB::table('evaluacion_clinicas')
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+        $evaluacionClinica->update($request->all());
+        return $request;
     }
 
     /**
