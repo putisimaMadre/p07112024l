@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ConsentimientoInformado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ConsentimientoInformadoController extends Controller
 {
@@ -43,17 +44,23 @@ class ConsentimientoInformadoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ConsentimientoInformado $consentimientoInformado)
+    public function edit($id)
     {
-        //
+        $concentimientoI = DB::table('consentimiento_informados')
+            ->where('idDatosGenerales', '=', $id)
+            ->get();
+        return $concentimientoI;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ConsentimientoInformado $consentimientoInformado)
+    public function update(Request $request)
     {
-        //
+        $consentimientoInformado = DB::table('consentimiento_informados')
+            ->where('idDatosGenerales', $request->idDatosGenerales);
+            $consentimientoInformado->update($request->all());
+        return $request;
     }
 
     /**

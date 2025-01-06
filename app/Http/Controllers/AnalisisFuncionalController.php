@@ -50,7 +50,7 @@ class AnalisisFuncionalController extends Controller
             ->where('idDatosGenerales', '=', $id)
             ->get();
         //dd($antecedentesFyH);
-        return $analisisFuncional   ;
+        return $analisisFuncional;
     }
 
     /**
